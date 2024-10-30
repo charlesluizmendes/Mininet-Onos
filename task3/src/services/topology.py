@@ -4,7 +4,7 @@ from mininet.topo import Topo
 from mininet.log import info
 
 class SingleSwitchTopology(Topo):
-    def __init__(self, hosts=13):
+    def __init__(self, hosts):
         super().__init__()
         info(f"*** Criando topologia única com um switch e {hosts} hosts\n")
 
@@ -15,7 +15,7 @@ class SingleSwitchTopology(Topo):
             self.addLink(host, switch)
 
 class LinearTopology(Topo):
-    def __init__(self, switches=10, hosts=10):
+    def __init__(self, switches, hosts):
         super().__init__()
         info(f"*** Criando topologia linear com {switches} switch(es) e {hosts} host(s)\n")
         
@@ -34,9 +34,9 @@ class LinearTopology(Topo):
             self.addLink(host, switches_list[i - 1])
 
 class TreeTopology(Topo):
-    def __init__(self, depth=3, fanout=2):
+    def __init__(self, depth, fanout):
         super().__init__()
-        info(f"*** Criando topologia em árvore com profundidade {depth} e fanout {fanout}\n")
+        info(f"*** Criando topologia em árvore com depth {depth} e fanout {fanout}\n")
         
         # Inicializa contadores para switches e hosts
         self.switch_count = 1

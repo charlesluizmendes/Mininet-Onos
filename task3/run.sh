@@ -18,4 +18,4 @@ done
 echo "Executando a topologia $TOPOLOGY com parâmetros adicionais: $EXTRA_ARGS"
 
 # Execute o script de gerenciamento do Mininet com o tipo de topologia e parâmetros adicionais
-sudo python3 src/services/network.py $TOPOLOGY $EXTRA_ARGS
+sudo python3 src/main.py $TOPOLOGY $EXTRA_ARGS

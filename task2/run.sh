@@ -10,4 +10,4 @@ TOPOLOGY=$1
 echo "Executando a topologia $TOPOLOGY"
 
 # Execute o script de gerenciamento do Mininet com o tipo de topologia especificado
-sudo python3 src/services/network.py $TOPOLOGY
+sudo python3 src/main.py $TOPOLOGY
