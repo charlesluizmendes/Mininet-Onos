@@ -62,5 +62,5 @@ class MininetNetwork:
 if __name__ == '__main__':
     setLogLevel('info')
     # Configura e executa a rede usando a topologia e o controlador ONOS
-    network = MininetNetwork(CustomTopology, '192.168.64.2', 6653)
+    network = MininetNetwork(CustomTopology, '192.168.0.48', 6653)
     network.run()

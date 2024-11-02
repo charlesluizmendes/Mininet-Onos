@@ -15,7 +15,7 @@ sudo mn --topo tree,depth=3,fanout=2 --controller=ref --test pingall
 ## Comandos para Onos:
 
 ```
-sudo mn --topo single,10 --controller remote,ip=192.168.64.2 --switch ovs,protocols=OpenFlow13 --test pingall
-sudo mn --topo linear,5 --controller remote,ip=192.168.64.2 --switch ovs,protocols=OpenFlow13 --test pingall
-sudo mn --topo tree,depth=3,fanout=2 --controller remote,ip=192.168.64.2 --switch ovs,protocols=OpenFlow13 --test pingall
+sudo mn --topo single,10 --controller remote,ip=192.168.0.48,port=6653 --switch ovs,protocols=OpenFlow13 --test pingall
+sudo mn --topo linear,5 --controller remote,ip=192.168.0.48,port=6653 --switch ovs,protocols=OpenFlow13 --test pingall
+sudo mn --topo tree,depth=3,fanout=2 --controller remote,ip=192.168.0.48,port=6653 --switch ovs,protocols=OpenFlow13 --test pingall
 ```
