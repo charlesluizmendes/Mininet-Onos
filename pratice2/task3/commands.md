@@ -110,6 +110,8 @@ cookie=0x100007a585b6f, duration=198.555s, table=0, n_packets=63, n_bytes=8757, 
 
 ## add-host-intent
 
+Essas regras mostram que o ONOS configurou o switch s1 para permitir que a comunicação direcionar do entre os host h1 para o host h2:
+
 ### h1-h2
 
 ```
@@ -121,7 +123,9 @@ sh> sudo ovs-ofctl -O OpenFlow13 dump-flows s1
  cookie=0x240000e42994e6, duration=24.230s, table=0, n_packets=4, n_bytes=392, send_flow_rem priority=100,in_port="s1-eth1",dl_src=d2:de:fe:5c:62:73,dl_dst=fe:f1:87:ea:18:2d actions=output:"s1-eth2"
 ```
  
-## h1-h5
+### h1-h5
+
+Essas regras mostram que o ONOS configurou o switch s1 para permitir que a comunicação direcionar do entre os host h2 para o host h1:
 
 ```
 sh> sudo ovs-ofctl -O OpenFlow13 dump-flows s1
@@ -136,7 +140,11 @@ sh> sudo ovs-ofctl -O OpenFlow13 dump-flows s1
  
 
 ## add-point-intent
- 
+
+Essas regras mostram que o ONOS configurou o switch s1 para permitir que a comunicação direcionar do entre os host h1 para o host h2, e consequentemente entre os host h2 para o host h1, pois e necessário que seja adicionado a regra de ida e também a regra de volta:
+
+As mesmas regras se aplicam para os switchs s2, s3 e s4, quando um Intent e criado para satisfazer a rota do h1 para o h5.
+
 ### h1-h2
 
 ```
