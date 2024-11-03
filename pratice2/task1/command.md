@@ -1,6 +1,4 @@
-# Comandos para executar 
-
-Crie uma topologia com pelo menos 4 switches, sendo que um deles não deve ter nenhum host, e distribua pelo menos 7 clientes entre esses switches.
+# Criando topologia:
 
 ```
 sudo python3 custom_topology.py
@@ -379,3 +377,5 @@ PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
 4 packets transmitted, 4 received, 0% packet loss, time 3090ms
 rtt min/avg/max/mdev = 0.035/0.121/0.369/0.142 ms
 ```
+
+![alt text](<Captura de tela de 2024-11-02 22-44-36.png>)
