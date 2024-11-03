@@ -9,7 +9,7 @@ s3
 s4
 ```
 
-## Após executar o comando "onos> app deactivate org.onosproject.fwd":
+### Após executar o comando "onos> app deactivate org.onosproject.fwd":
 
 ```
 sh> sudo ovs-ofctl -O OpenFlow13 dump-flows s1
@@ -121,4 +121,6 @@ sh> sudo ovs-ofctl -O OpenFlow13 dump-flows s1
 
 ## ip netns list
 
+```
 sh> sudo ip netns list
+```
