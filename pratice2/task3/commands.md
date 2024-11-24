@@ -239,6 +239,10 @@ Listando os namespaces com o comando lsns -t net:
 ```
 ssh> sudo lsns -t net
         NS TYPE NPROCS   PID USER      NETNSID NSFS COMMAND
+4026531840 net     238     1 root   unassigned      /sbin/init
+4026532502 net       1  1028 root   unassigned      /usr/libexec/accounts-daemon
+4026532567 net       1  1424 rtkit  unassigned      /usr/libexec/rtkit-daemon
+4026532631 net       5  4696 ubuntu unassigned      /snap/chromium/2995/usr/lib/chromium-browser/chrome --type=zygote --string-annotations --crashpad-ha
 4026532690 net       1 15112 root            0      bash --norc --noediting -is mininet:h1
 4026532747 net       1 15115 root            1      bash --norc --noediting -is mininet:h2
 4026532803 net       1 15117 root            2      bash --norc --noediting -is mininet:h3
@@ -246,4 +250,15 @@ ssh> sudo lsns -t net
 4026532915 net       1 15121 root            4      bash --norc --noediting -is mininet:h5
 4026532971 net       1 15123 root            5      bash --norc --noediting -is mininet:h6
 4026533027 net       1 15125 root            6      bash --norc --noediting -is mininet:h7
+```
+
+Apos realizar a saida do mininet com o comando 'mininet> exit', nao sera visualizado nenhum ns do mininet:
+
+```
+ssh> sudo lsns -t net
+        NS TYPE NPROCS   PID USER      NETNSID NSFS COMMAND
+4026531840 net     238     1 root   unassigned      /sbin/init
+4026532502 net       1  1028 root   unassigned      /usr/libexec/accounts-daemon
+4026532567 net       1  1424 rtkit  unassigned      /usr/libexec/rtkit-daemon
+4026532631 net       5  4696 ubuntu unassigned      /snap/chromium/2995/usr/lib/chromium-browser/chrome --type=zygote --string-annotations --crashpad-ha
 ```
