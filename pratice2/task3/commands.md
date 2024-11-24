@@ -238,7 +238,6 @@ Listando os namespaces com o comando lsns -t net:
 
 ```
 ssh> sudo lsns -t net
-ubuntu@ubuntu:~/Projects/Mininet-Onos/pratice2/task1$ sudo lsns -t net
         NS TYPE NPROCS   PID USER      NETNSID NSFS COMMAND
 4026532690 net       1 15112 root            0      bash --norc --noediting -is mininet:h1
 4026532747 net       1 15115 root            1      bash --norc --noediting -is mininet:h2
