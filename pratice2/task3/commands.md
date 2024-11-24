@@ -231,3 +231,20 @@ sh> sudo ovs-ofctl -O OpenFlow13 dump-flows s4
 ```
 sh> sudo ip netns list
 ```
+
+O comando ip netns list não retorna nada porque o Mininet não utiliza namespaces de rede Linux padrão para os hosts que cria. Em vez disso, o Mininet usa namespaces privados diretamente configurados internamente, mas esses namespaces não aparecem na lista padrão gerada pelo comando ip netns list.
+
+Listando os namespaces com o comando lsns -t net:
+
+```
+ssh> sudo lsns -t net
+ubuntu@ubuntu:~/Projects/Mininet-Onos/pratice2/task1$ sudo lsns -t net
+        NS TYPE NPROCS   PID USER      NETNSID NSFS COMMAND
+4026532690 net       1 15112 root            0      bash --norc --noediting -is mininet:h1
+4026532747 net       1 15115 root            1      bash --norc --noediting -is mininet:h2
+4026532803 net       1 15117 root            2      bash --norc --noediting -is mininet:h3
+4026532859 net       1 15119 root            3      bash --norc --noediting -is mininet:h4
+4026532915 net       1 15121 root            4      bash --norc --noediting -is mininet:h5
+4026532971 net       1 15123 root            5      bash --norc --noediting -is mininet:h6
+4026533027 net       1 15125 root            6      bash --norc --noediting -is mininet:h7
+```
