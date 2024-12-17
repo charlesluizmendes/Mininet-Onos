@@ -42,7 +42,7 @@ if __name__ == '__main__':
     elif topology_type == "linear":
         network = MininetNetwork(LinearTopology, controller_ip, controller_port, num_switches=10, num_hosts=10)
     elif topology_type == "tree":
-        network = MininetNetwork(TreeTopology, controller_ip, controller_port, depth=3, fanout=2)
+        network = MininetNetwork(TreeTopology, controller_ip, controller_port, depth=4, fanout=5)
     else:
         raise ValueError("Topologia desconhecida. Escolha entre: single, linear ou tree.")
 
