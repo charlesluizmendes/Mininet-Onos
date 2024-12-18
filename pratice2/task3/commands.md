@@ -125,7 +125,7 @@ sh> sudo ovs-ofctl -O OpenFlow13 dump-flows s1
  
 ### h1-h5
 
-Essas regras mostram que o ONOS configurou o switch s1 para permitir que a comunicação direcionar do entre os host h2 para o host h1:
+Essas regras mostram que o ONOS configurou o switch s1 para permitir que a comunicação direcionar do entre os host h1 para o host h5:
 
 ```
 sh> sudo ovs-ofctl -O OpenFlow13 dump-flows s1
