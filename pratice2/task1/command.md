@@ -124,23 +124,7 @@ rtt min/avg/max/mdev = 0.054/2.788/9.177/3.755 m
 
 
 
-# Intents definidos pelo usuário sem suporte a encaminhamento do Reactevice:
-
-```
-onos> app deactivate org.onosproject.fwd
-```
-
-### Listando Hosts:
-
-```
-onos> hosts
-id=AA:70:F6:40:E0:F0/None, mac=AA:70:F6:40:E0:F0, locations=[of:0000000000000001/1], vlan=None, ip(s)=[10.0.0.1], innerVlan=None, outerTPID=unknown, provider=of:org.onosproject.provider.host, configured=false
-id=EE:04:2E:5A:DF:D0/None, mac=EE:04:2E:5A:DF:D0, locations=[of:0000000000000004/1], vlan=None, ip(s)=[10.0.0.5], innerVlan=None, outerTPID=unknown, provider=of:org.onosproject.provider.host, configured=false
-id=F2:19:21:AE:91:42/None, mac=F2:19:21:AE:91:42, locations=[of:0000000000000001/2], vlan=None, ip(s)=[10.0.0.2], innerVlan=None, outerTPID=unknown, provider=of:org.onosproject.provider.host, configured=false
-```
-
-
-### Adicionando Host To Host Intent:
+# Adicionando Host To Host Intent:
 
 ```
 onos> add-host-intent AA:70:F6:40:E0:F0/None F2:19:21:AE:91:42/None
@@ -256,7 +240,7 @@ Point to point intent submitted:
 PointToPointIntent{id=0x300034, key=0x300034, appId=DefaultApplicationId{id=2, name=org.onosproject.cli}, priority=100, resources=[], selector=DefaultTrafficSelector{criteria=[]}, treatment=DefaultTrafficTreatment{immediate=[NOACTION], deferred=[], transition=None, meter=[], cleared=false, StatTrigger=null, metadata=null}, ingress=FilteredConnectPoint{connectPoint=of:0000000000000001/2, trafficSelector=DefaultTrafficSelector{criteria=[]}}, egress=FilteredConnectPoint{connectPoint=of:0000000000000001/1, trafficSelector=DefaultTrafficSelector{criteria=[]}}, constraints=[], links=null, resourceGroup=null}
 ```
 
-## Flows (Point To Point Intent [h1 para h2]) Resultados:
+### Flows (Point To Point Intent [h1 para h2]) Resultados:
 
 ```
 onos> flows
@@ -280,7 +264,7 @@ deviceId=of:0000000000000004, flowRuleCount=3
     id=10000687421fe, state=ADDED, bytes=358898, packets=2582, duration=3490, liveType=UNKNOWN, priority=40000, tableId=0, appId=org.onosproject.core, payLoad=null, selector=[ETH_TYPE:bddp], treatment=DefaultTrafficTreatment{immediate=[OUTPUT:CONTROLLER], deferred=[], transition=None, meter=[], cleared=true, StatTrigger=null, metadata=null}
 ```
 
-## Intents (Point To Point Intent [h1 para h2]) Resultados:
+### Intents (Point To Point Intent [h1 para h2]) Resultados:
 
 ```
 onos> intents
@@ -309,7 +293,7 @@ Egress connect points and individual selectors
  -> Connect Point: of:0000000000000001/1   Selector: Inherited
 ```
 
-## Ping (Point To Point Intent [h1 para h2]) Resultados:
+### Ping (Point To Point Intent [h1 para h2]) Resultados:
 
 ```
 mininet> h1 ping -c 4 h2  # Ping entre hosts no mesmo switch
@@ -324,8 +308,7 @@ PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.024/0.076/0.213/0.078 ms
 ```
 
-
-### *OBS:
+## *OBS:
 
 Aqui devemos excluir todos os Intents criando de [h1 para h2], pois a porta de [of:0000000000000001/1] estará aberta e não poderá ser utilizada para realizar um ping em [of:0000000000000004/1].
 
@@ -335,6 +318,7 @@ Com isso devemos excluir os Intents anteriores:
 onos> remove-intent org.onosproject.cli 0x300031
 onos> remove-intent org.onosproject.cli 0x300034
 ```
+
 
 
 # Adicionando Point To Point Intent [h1 para h5]:
@@ -349,7 +333,7 @@ Point to point intent submitted:
 PointToPointIntent{id=0x30003a, key=0x30003a, appId=DefaultApplicationId{id=2, name=org.onosproject.cli}, priority=100, resources=[], selector=DefaultTrafficSelector{criteria=[]}, treatment=DefaultTrafficTreatment{immediate=[NOACTION], deferred=[], transition=None, meter=[], cleared=false, StatTrigger=null, metadata=null}, ingress=FilteredConnectPoint{connectPoint=of:0000000000000004/1, trafficSelector=DefaultTrafficSelector{criteria=[]}}, egress=FilteredConnectPoint{connectPoint=of:0000000000000001/1, trafficSelector=DefaultTrafficSelector{criteria=[]}}, constraints=[], links=null, resourceGroup=null}
 ```
 
-## Flows (Point To Point Intent [h1 para h5]) Resultados:
+### Flows (Point To Point Intent [h1 para h5]) Resultados:
 
 ```
 onos> flows
@@ -379,8 +363,7 @@ deviceId=of:0000000000000004, flowRuleCount=5
     id=2400003540fcd7, state=ADDED, bytes=0, packets=0, duration=52, liveType=UNKNOWN, priority=100, tableId=0, appId=org.onosproject.net.intent, payLoad=null, selector=[IN_PORT:1], treatment=DefaultTrafficTreatment{immediate=[OUTPUT:4], deferred=[], transition=None, meter=[], cleared=false, StatTrigger=null, metadata=null}
 ```
 
-
-## Intents (Point To Point Intent [h1 para h5]) Resultados:
+### Intents (Point To Point Intent [h1 para h5]) Resultados:
 
 ```
 onos> intents
@@ -409,7 +392,7 @@ Egress connect points and individual selectors
  -> Connect Point: of:0000000000000004/1   Selector: Inherited
 ```
 
-## Ping (Point To Point Intent [h1 para h5]) Resultados:
+### Ping (Point To Point Intent [h1 para h5]) Resultados:
 
 ```
 mininet> h1 ping -c 4 h5  # Ping entre hosts em switches diferentes
